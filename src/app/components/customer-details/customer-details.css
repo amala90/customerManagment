@@ -1,0 +1,9 @@
+/* customer-details.component.css */
+.customer-card {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+mat-list-item {
+  margin-bottom: 12px;
+}

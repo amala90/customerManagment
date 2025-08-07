@@ -1,0 +1,35 @@
+<mat-card *ngIf="customer; else loadingTemplate" class="customer-details-card">
+  <mat-card-header>
+    <mat-card-title>Customer Details</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <strong>ID:</strong>&nbsp;<span>{{ customer._id }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Name:</strong>&nbsp;<span>{{ customer.name }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Email:</strong>&nbsp;
+        <a matLine href="mailto:{{ customer.email }}">{{ customer.email }}</a>
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Phone:</strong>&nbsp;
+        <a matLine href="tel:{{ customer.phone }}">{{ customer.phone }}</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #loadingTemplate>
+  <mat-progress-spinner
+    mode="indeterminate"
+    diameter="20"
+    aria-label="Loading customer details"
+  ></mat-progress-spinner>
+  <p class="loading-text" aria-live="polite" role="status">
+    Loading customer details, please wait...
+  </p>
+</ng-template>
